@@ -134,7 +134,7 @@ export default function Home() {
                 variant="contained"
                 startIcon={<Instagram />}
                 component="a"
-                href="https://www.instagram.com/_vioid"
+                href="https://www.instagram.com/_v1oid"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
@@ -144,7 +144,7 @@ export default function Home() {
                   },
                 }}
               >
-                Instagram: _vioid
+                Instagram: _v1oid
               </SocialButton>
               <SocialButton
                 variant="contained"
@@ -241,6 +241,31 @@ export default function Home() {
           </Typography>
         </Box>
       </Container>
+      
+      {/* Custom Badge */}
+      <Box
+        sx={{
+          position: 'fixed',
+          bottom: 16,
+          left: 16,
+          background: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
+          color: 'white',
+          padding: '8px 16px',
+          borderRadius: '20px',
+          fontSize: '0.875rem',
+          fontWeight: 600,
+          boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          '&:hover': {
+            transform: 'scale(1.05)',
+            boxShadow: '0 6px 20px rgba(59, 130, 246, 0.4)',
+          },
+          zIndex: 1000,
+        }}
+      >
+        AI太好用了你們知道嗎
+      </Box>
     </Box>
   )
 }
