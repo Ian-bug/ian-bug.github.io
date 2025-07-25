@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography, Card, CardContent, Button, Avatar, Chip, Grid } from '@mui/material'
+import { Box, Container, Typography, Card, CardContent, Button, Avatar, Chip } from '@mui/material'
 import { Github, Instagram, Play, Gamepad2, Music, MessageCircle, Mail } from 'lucide-react'
 import { styled } from '@mui/material/styles'
 import avatarImage from '@/assets/images/avatar.jpg'
@@ -15,7 +15,12 @@ const GradientCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const SocialButton = styled(Button)(({ theme }) => ({
+const SocialButton = styled(Button)<{
+  component?: React.ElementType;
+  href?: string;
+  target?: string;
+  rel?: string;
+}>(({ theme }) => ({
   borderRadius: '12px',
   padding: '12px 24px',
   textTransform: 'none',
@@ -25,7 +30,7 @@ const SocialButton = styled(Button)(({ theme }) => ({
   '&:hover': {
     transform: 'scale(1.05)',
   },
-})) as typeof Button
+}))
 
 const InterestChip = styled(Chip)(({ theme }) => ({
   background: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
@@ -108,78 +113,70 @@ export default function Home() {
             >
               如果你想找我，不要來找我。
             </Typography>
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item>
-                <SocialButton
-                  variant="contained"
-                  startIcon={<MessageCircle />}
-                  component="a"
-                  href="https://discord.com/users/871743426620706847"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    background: 'linear-gradient(45deg, #5865f2, #7289da)',
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #4752c4, #5b6eae)',
-                    },
-                  }}
-                >
-                  Discord: .1an._
-                </SocialButton>
-              </Grid>
-              <Grid item>
-                <SocialButton
-                  variant="contained"
-                  startIcon={<Instagram />}
-                  component="a"
-                  href="https://www.instagram.com/_vioid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    background: 'linear-gradient(45deg, #e4405f, #f56040)',
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #d73447, #e8552e)',
-                    },
-                  }}
-                >
-                  Instagram: _vioid
-                </SocialButton>
-              </Grid>
-              <Grid item>
-                <SocialButton
-                  variant="contained"
-                  startIcon={<Play />}
-                  component="a"
-                  href="https://b23.tv/mLUrPE2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    background: 'linear-gradient(45deg, #00a1d6, #00c4cc)',
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #0081ac, #00a3aa)',
-                    },
-                  }}
-                >
-                  Bilibili: w0_i
-                </SocialButton>
-              </Grid>
-              <Grid item>
-                <SocialButton
-                  variant="contained"
-                  startIcon={<Mail />}
-                  component="a"
-                  href="mailto:nigga@plsdonate.club"
-                  sx={{
-                    background: 'linear-gradient(45deg, #ff6b6b, #ee5a24)',
-                    '&:hover': {
-                      background: 'linear-gradient(45deg, #e55656, #d63031)',
-                    },
-                  }}
-                >
-                  Email: nigga@plsdonate.club
-                </SocialButton>
-              </Grid>
-            </Grid>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center' }}>
+              <SocialButton
+                variant="contained"
+                startIcon={<MessageCircle />}
+                component="a"
+                href="https://discord.com/users/871743426620706847"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  background: 'linear-gradient(45deg, #5865f2, #7289da)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #4752c4, #5b6eae)',
+                  },
+                }}
+              >
+                Discord: .1an._
+              </SocialButton>
+              <SocialButton
+                variant="contained"
+                startIcon={<Instagram />}
+                component="a"
+                href="https://www.instagram.com/_vioid"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  background: 'linear-gradient(45deg, #e4405f, #f56040)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #d73447, #e8552e)',
+                  },
+                }}
+              >
+                Instagram: _vioid
+              </SocialButton>
+              <SocialButton
+                variant="contained"
+                startIcon={<Play />}
+                component="a"
+                href="https://b23.tv/mLUrPE2"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  background: 'linear-gradient(45deg, #00a1d6, #00c4cc)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #0081ac, #00a3aa)',
+                  },
+                }}
+              >
+                Bilibili: w0_i
+              </SocialButton>
+              <SocialButton
+                variant="contained"
+                startIcon={<Mail />}
+                component="a"
+                href="mailto:nigga@plsdonate.club"
+                sx={{
+                  background: 'linear-gradient(45deg, #ff6b6b, #ee5a24)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #e55656, #d63031)',
+                  },
+                }}
+              >
+                Email: nigga@plsdonate.club
+              </SocialButton>
+            </Box>
           </CardContent>
         </GradientCard>
 
@@ -192,50 +189,48 @@ export default function Home() {
             <Typography variant="body1" sx={{ mb: 4, textAlign: 'center' }}>
               歡迎加入我的 Discord 伺服器：
             </Typography>
-            <Grid container spacing={3} justifyContent="center">
-              <Grid item xs={12} md={6}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    '& iframe': {
-                      borderRadius: '12px',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                    },
-                  }}
-                >
-                  <iframe
-                    src="https://discord.com/widget?id=1164181579191550055&theme=dark"
-                    width="350"
-                    height="500"
-                    allowTransparency={true}
-                    frameBorder="0"
-                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                  />
-                </Box>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    '& iframe': {
-                      borderRadius: '12px',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                    },
-                  }}
-                >
-                  <iframe
-                    src="https://discord.com/widget?id=1297496788449624125&theme=dark"
-                    width="350"
-                    height="500"
-                    allowTransparency={true}
-                    frameBorder="0"
-                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                  />
-                </Box>
-              </Grid>
-            </Grid>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flex: { xs: '1 1 100%', md: '1 1 45%' },
+                  '& iframe': {
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  },
+                }}
+              >
+                <iframe
+                  src="https://discord.com/widget?id=1164181579191550055&theme=dark"
+                  width="350"
+                  height="500"
+                  allowTransparency={true}
+                  frameBorder="0"
+                  sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                />
+              </Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flex: { xs: '1 1 100%', md: '1 1 45%' },
+                  '& iframe': {
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  },
+                }}
+              >
+                <iframe
+                  src="https://discord.com/widget?id=1297496788449624125&theme=dark"
+                  width="350"
+                  height="500"
+                  allowTransparency={true}
+                  frameBorder="0"
+                  sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                />
+              </Box>
+            </Box>
           </CardContent>
         </GradientCard>
 
