@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Container, Typography, Card, CardContent, Button, Avatar, Chip, Grid } from '@mui/material'
 import { Github, Instagram, Play, Gamepad2, Music, MessageCircle, Mail } from 'lucide-react'
 import { styled } from '@mui/material/styles'
@@ -14,7 +15,7 @@ const GradientCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const SocialButton = styled(Button)(({ theme }) => ({
+const SocialButton = styled(Button)<{ component?: React.ElementType }>(({ theme }) => ({
   borderRadius: '12px',
   padding: '12px 24px',
   textTransform: 'none',
