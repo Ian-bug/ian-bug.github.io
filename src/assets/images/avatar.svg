@@ -1,0 +1,32 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="60" fill="url(#gradient)" />
+  
+  <!-- Moon -->
+  <circle cx="45" cy="40" r="18" fill="white" />
+  
+  <!-- Clouds -->
+  <g fill="#333">
+    <!-- Cloud 1 -->
+    <ellipse cx="25" cy="75" rx="12" ry="8" />
+    <ellipse cx="32" cy="72" rx="8" ry="6" />
+    <ellipse cx="18" cy="72" rx="6" ry="5" />
+    
+    <!-- Cloud 2 -->
+    <ellipse cx="85" cy="80" rx="15" ry="9" />
+    <ellipse cx="95" cy="77" rx="10" ry="7" />
+    <ellipse cx="75" cy="77" rx="8" ry="6" />
+    
+    <!-- Cloud 3 (smaller) -->
+    <ellipse cx="70" cy="45" rx="8" ry="5" />
+    <ellipse cx="76" cy="43" rx="5" ry="4" />
+  </g>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
