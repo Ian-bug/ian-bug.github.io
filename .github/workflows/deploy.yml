@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [ master ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,12 +46,3 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v4
       if: github.ref == 'refs/heads/master'
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
