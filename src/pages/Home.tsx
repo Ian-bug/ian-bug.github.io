@@ -15,7 +15,7 @@ const GradientCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const SocialButton = styled(Button)<{ component?: React.ElementType }>(({ theme }) => ({
+const SocialButton = styled(Button)(({ theme }) => ({
   borderRadius: '12px',
   padding: '12px 24px',
   textTransform: 'none',
@@ -25,7 +25,7 @@ const SocialButton = styled(Button)<{ component?: React.ElementType }>(({ theme 
   '&:hover': {
     transform: 'scale(1.05)',
   },
-}))
+})) as typeof Button
 
 const InterestChip = styled(Chip)(({ theme }) => ({
   background: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
