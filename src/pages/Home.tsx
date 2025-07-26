@@ -205,7 +205,7 @@ export default function Home() {
                   src="https://discord.com/widget?id=1164181579191550055&theme=dark"
                   width="350"
                   height="500"
-                  allowTransparency={true}
+                  style={{ background: 'transparent' }}
                   frameBorder="0"
                   sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 />
@@ -225,7 +225,7 @@ export default function Home() {
                   src="https://discord.com/widget?id=1297496788449624125&theme=dark"
                   width="350"
                   height="500"
-                  allowTransparency={true}
+                  style={{ background: 'transparent' }}
                   frameBorder="0"
                   sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 />
