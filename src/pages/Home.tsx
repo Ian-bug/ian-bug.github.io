@@ -79,7 +79,7 @@ export default function Home() {
             Ian
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            14歲台灣學生 • 遊戲愛好者 • Discord活躍用戶
+            15歲台灣學生 • 遊戲愛好者 • Discord活躍用戶
           </Typography>
         </Box>
 
@@ -90,7 +90,7 @@ export default function Home() {
               關於我
             </Typography>
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.8, textAlign: 'center' }}>
-              嗨，我是 Ian，一個14歲的台灣學生，我喜歡玩 Roblox、Minecraft、音遊，也很常出現在 Discord 上。
+              嗨，我是 Ian，一個15歲的台灣學生，我喜歡玩 Roblox、Minecraft、音遊，也很常出現在 Discord 上。
             </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 1 }}>
               <InterestChip icon={<Gamepad2 size={16} />} label="Roblox" />
